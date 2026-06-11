@@ -944,9 +944,51 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--text);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     font-weight: 900;
     line-height: 1.25;
+  }
+  /* Team-lead tag pill */
+  .svc-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    align-self: flex-start;
+    line-height: 1;
+  }
+  .svc-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .svc-tag--lu {
+    background: rgba(220, 38, 38, 0.10);
+    color: var(--red);
+    border: 1px solid rgba(220, 38, 38, 0.32);
+  }
+  .svc-tag--lu::before { background: var(--red); }
+  .svc-tag--ss {
+    background: rgba(37, 99, 235, 0.10);
+    color: var(--blue);
+    border: 1px solid rgba(37, 99, 235, 0.35);
+  }
+  .svc-tag--ss::before { background: var(--blue); }
+  .svc-tag--both {
+    background: linear-gradient(90deg, rgba(220, 38, 38, 0.10), rgba(37, 99, 235, 0.10));
+    color: var(--text);
+    border: 1px solid rgba(11, 30, 63, 0.15);
+  }
+  .svc-tag--both::before {
+    background: linear-gradient(135deg, var(--red), var(--blue));
   }
   .svc-value {
     color: var(--text);
@@ -2487,10 +2529,10 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="container reveal">
-    <span class="eyebrow">03 — What I Manage</span>
+    <span class="eyebrow">03 — What We Manage</span>
     <h2 class="section-title">Full-Service Athlete<br/><span>Growth Support</span></h2>
     <div class="divider"></div>
-    <p class="services-intro">A complete system built around Cash's brand, sponsors, content, tournament schedule, and long-term growth.</p>
+    <p class="services-intro">A complete system built around Cash's brand, sponsors, content, tournament schedule, and long-term growth — with Level Up running the strategy side and Stickside running the media side.</p>
 
     <div class="services-grid stagger-grid">
 
@@ -2500,6 +2542,7 @@
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
         </div>
         <h3>Sponsor Acquisition</h3>
+        <span class="svc-tag svc-tag--lu">By Level Up</span>
         <p class="svc-value">Turn Cash's image, audience, and tournament presence into real sponsor opportunities.</p>
         <ul class="svc-bullets">
           <li>Research cornhole-specific brands, lifestyle brands, and national companies that fit Cash's image</li>
@@ -2515,6 +2558,7 @@
           <svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
         </div>
         <h3>Social Growth Strategy</h3>
+        <span class="svc-tag svc-tag--both">By Both</span>
         <p class="svc-value">Turn Cash's large following into an active audience that sponsors want to be connected to.</p>
         <ul class="svc-bullets">
           <li>Build a clear posting strategy across Facebook, TikTok, and Instagram</li>
@@ -2530,6 +2574,7 @@
           <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><polygon points="10 9.5 16 12 10 14.5" fill="currentColor" stroke="none"/></svg>
         </div>
         <h3>Media &amp; Content Production</h3>
+        <span class="svc-tag svc-tag--ss">By Stickside</span>
         <p class="svc-value">Capture and package Cash's story in a way that feels real, professional, and sponsor-ready.</p>
         <ul class="svc-bullets">
           <li>Work with my media team to create highlight videos, tournament coverage, lifestyle content, and sponsored posts</li>
@@ -2545,6 +2590,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 3 L13.6 9.4 L20 11 L13.6 12.6 L12 19 L10.4 12.6 L4 11 L10.4 9.4 Z"/><path d="M18 4 L18.7 6 L20.8 6.7 L18.7 7.4 L18 9.5 L17.3 7.4 L15.2 6.7 L17.3 6 Z"/></svg>
         </div>
         <h3>Personal Brand Development</h3>
+        <span class="svc-tag svc-tag--both">By Both</span>
         <p class="svc-value">Build a recognizable Cash Chamness brand that lives alongside BG without being hidden under it.</p>
         <ul class="svc-bullets">
           <li>Develop a clear visual direction for Cash's personal brand</li>
@@ -2560,6 +2606,7 @@
           <svg viewBox="0 0 24 24"><path d="M21 3 L3 11 L10.5 13 L13 20.5 Z"/><line x1="10.5" y1="13" x2="21" y2="3"/></svg>
         </div>
         <h3>Event &amp; Travel Management</h3>
+        <span class="svc-tag svc-tag--lu">By Level Up</span>
         <p class="svc-value">Handle the backend details that take time away from competing and preparation.</p>
         <ul class="svc-bullets">
           <li>Help coordinate flights, hotels, tournament schedules, and event logistics</li>
@@ -2579,6 +2626,7 @@
           <svg viewBox="0 0 24 24"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="13" width="3" height="7" rx="0.5"/><rect x="11" y="9" width="3" height="11" rx="0.5"/><rect x="16" y="5" width="3" height="15" rx="0.5"/></svg>
         </div>
         <h3>Partnership Reporting</h3>
+        <span class="svc-tag svc-tag--both">By Both</span>
         <p class="svc-value">Give sponsors proof of value so they feel confident continuing and renewing deals.</p>
         <ul class="svc-bullets">
           <li>Create regular sponsor updates showing reach, impressions, views, and engagement</li>
@@ -2594,7 +2642,8 @@
           <svg viewBox="0 0 24 24"><path d="M8 4 L16 4 L16 11 a4 4 0 0 1 -8 0 Z"/><path d="M8 6 L5 6 L5 8.5 a3 3 0 0 0 3 3"/><path d="M16 6 L19 6 L19 8.5 a3 3 0 0 1 -3 3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="15" x2="12" y2="20"/></svg>
         </div>
         <h3>Level Up Brand Partnership</h3>
-        <p class="svc-value">Expand Cash's role as a Level Up sponsored athlete while helping both brands grow together.</p>
+        <span class="svc-tag svc-tag--lu">By Level Up</span>
+        <p class="svc-value">Expand Cash's role as a Level Up sponsored athlete, with Stickside-produced content amplifying every campaign push.</p>
         <ul class="svc-bullets">
           <li>Feature Cash in Level Up campaigns, promotional videos, and social media pushes</li>
           <li>Use Cash in coaching content, training content, and platform marketing</li>
