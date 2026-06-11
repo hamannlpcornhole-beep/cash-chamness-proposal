@@ -526,6 +526,325 @@
     .reel-label { bottom: 18px; left: 18px; font-size: 11px; }
   }
 
+  /* TEAM BEHIND CASH — full-bleed credibility section */
+  .team-section {
+    background:
+      radial-gradient(900px 500px at 0% 0%, rgba(220, 38, 38, 0.15), transparent 55%),
+      radial-gradient(900px 500px at 100% 100%, rgba(37, 99, 235, 0.20), transparent 55%),
+      linear-gradient(160deg, #0b1e3f 0%, #0a172e 60%, #060e1f 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .team-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 75%);
+    pointer-events: none;
+  }
+  .team-section .container { position: relative; }
+  .team-eyebrow {
+    color: #fca5a5;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+  .team-title {
+    font-size: clamp(36px, 5.5vw, 64px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+  .team-title span { color: #fca5a5; }
+  .team-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--red);
+    margin-bottom: 28px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+  }
+  .reveal.in .team-divider { transform: scaleX(1); }
+  .team-sub {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 760px;
+    margin-bottom: 56px;
+  }
+  .team-sub strong { color: #ffffff; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  .team-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    padding: 36px 32px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.45s ease,
+                border-color 0.45s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .team-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 32px 70px rgba(0, 0, 0, 0.5);
+  }
+  .team-card-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .team-logo-box {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .team-logo-box img {
+    max-width: 84%;
+    max-height: 84%;
+    object-fit: contain;
+    display: block;
+  }
+  .team-logo-box.placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 6px;
+    line-height: 1.3;
+  }
+  .team-card-name {
+    flex: 1;
+  }
+  .team-card-name .tag {
+    color: #fca5a5;
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .team-card-name h3 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .team-card-name .role {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+    letter-spacing: 0.06em;
+  }
+  .team-person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .team-person-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .team-person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .team-person-photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .team-person-text .name {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .team-person-text .title {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+  }
+  .team-bio {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+  .team-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .team-stat {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .team-stat-num {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .team-stat-lbl {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+  .team-roles {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .team-roles-title {
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .team-roles ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+  }
+  .team-roles li {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12.5px;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+  }
+  .team-roles li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 8px;
+    width: 6px; height: 2px;
+    background: var(--red);
+  }
+
+  /* The talent card (Cash) — full width below */
+  .team-talent {
+    background: linear-gradient(180deg, rgba(220, 38, 38, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    border-radius: 18px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: center;
+    box-shadow: 0 18px 50px rgba(220, 38, 38, 0.18);
+  }
+  .team-talent-badge {
+    background: var(--red);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.24em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+  .team-talent-name {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .team-talent-name span { color: #fca5a5; }
+  .team-talent-tagline {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .team-talent-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    border: 3px solid rgba(220, 38, 38, 0.5);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .team-talent-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  @media (max-width: 880px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .team-talent { grid-template-columns: 1fr; text-align: center; }
+    .team-talent-photo { margin: 0 auto; }
+    .team-roles ul { grid-template-columns: 1fr; }
+  }
+
   /* SERVICE CARDS — PREMIUM PITCH DECK */
   .services-intro {
     color: var(--muted);
@@ -1933,12 +2252,13 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-brand">Cash Chamness × Level Up</div>
+    <div class="nav-brand">Cash Chamness · Level Up × Stickside</div>
     <button class="nav-toggle" aria-label="Menu">☰</button>
     <ul class="nav-links">
       <li><a href="#why-me">Why Me</a></li>
       <li><a href="#opportunity">Opportunity</a></li>
       <li><a href="#reel">Reel</a></li>
+      <li><a href="#team">The Team</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a href="#brand">Brand</a></li>
@@ -1953,39 +2273,39 @@
   <div class="hero-inner">
     <h1>Cash<br />Chamness</h1>
     <div class="accent-bar"></div>
-    <h2>The Most Exciting Player in Cornhole.<br /><span class="gold">It's Time to Build the Brand.</span></h2>
-    <div class="presented">Presented by Gavin Hamann &nbsp;|&nbsp; Level Up Cornhole</div>
+    <h2>The Most Exciting Player in Cornhole.<br /><span class="gold">Now He Gets a Real Team Behind Him.</span></h2>
+    <div class="presented">Presented by Level Up Cornhole &nbsp;×&nbsp; Stickside Cornhole</div>
   </div>
   <div class="scroll-cue">Scroll ↓</div>
 </section>
 
-<!-- WHY ME -->
+<!-- WHY US -->
 <section id="why-me">
   <div class="container reveal">
-    <span class="eyebrow">01 — Who I Am</span>
-    <h2 class="section-title">Why <span>Me</span></h2>
+    <span class="eyebrow">01 — Who We Are</span>
+    <h2 class="section-title">Why <span>Us</span></h2>
     <div class="divider"></div>
-    <p class="body">My name is <strong>Gavin Hamann.</strong> I'm the founder of Level Up Cornhole, the official training program partner of the ACL and one of the fastest growing brands in the cornhole space. I've been competing at the pro level, building a coaching platform with 100+ clients, and working alongside BG Cornhole for the past four years.</p>
-    <p class="body"><strong>I know this game. I know this community. And I know Cash.</strong></p>
-    <p class="body">I'm not an outsider pitching a generic management deal. I've watched Cash grow up in this sport. We've competed at the same events, built a relationship over years, and I already know what he's capable of — on the board and off it.</p>
-    <p class="body">What I'm proposing isn't just management. It's building something real around a player who already has everything it takes to become the biggest name in this sport.</p>
+    <p class="body">We're <strong>Gavin Hamann</strong> and <strong>Zack Stickney.</strong> Between the two of us, we've spent years inside this sport — competing, coaching, building, and producing the content that shapes how cornhole is seen. Gavin runs <strong>Level Up Cornhole</strong>, the official training program partner of the ACL. Zack runs <strong>Stickside Cornhole</strong>, the biggest media platform in the game.</p>
+    <p class="body"><strong>We know this game. We've watched it grow. We've seen what works. And we know Cash.</strong></p>
+    <p class="body">This isn't an outside agency pitching a generic management deal. We've watched Cash come up in this sport. We've competed at the same events, covered him at tournaments, built relationships with his family, and we already know what he's capable of — on the board and off it.</p>
+    <p class="body">What we're proposing isn't management. It's a <strong>real team built around Cash</strong> — training and business strategy from Level Up, media and storytelling from Stickside, and the combined credibility of two of the most active names in cornhole right now.</p>
 
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-num">100+</div>
-        <div class="stat-label">Coaching Clients</div>
+        <div class="stat-label">Level Up Coaching Clients</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">ACL</div>
         <div class="stat-label">Official Training Partner</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">4 Years</div>
-        <div class="stat-label">Alongside BG Cornhole</div>
+        <div class="stat-num">88K+</div>
+        <div class="stat-label">Stickside YouTube Subscribers</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">Active</div>
-        <div class="stat-label">FB · TikTok · IG Presence</div>
+        <div class="stat-num">137K+</div>
+        <div class="stat-label">Stickside Social Reach</div>
       </div>
     </div>
   </div>
@@ -2052,6 +2372,115 @@
       </div>
       <div class="reel-label">Cash Chamness · <span>Highlight Reel</span></div>
     </div>
+  </div>
+</section>
+
+<!-- TEAM BEHIND CASH -->
+<section id="team" class="team-section">
+  <div class="container reveal">
+    <span class="eyebrow team-eyebrow">02B · The Team Behind Cash</span>
+    <h2 class="team-title">Real Team.<br/><span>Real Backing.</span></h2>
+    <div class="team-divider"></div>
+    <p class="team-sub">This isn't one guy with a pitch deck. It's <strong>two of the most active names in cornhole</strong> putting their companies behind Cash. Strategy, training, and business support from Level Up. Media, content, and reach from Stickside. Combined — a real player brand operation.</p>
+
+    <div class="team-grid stagger-grid">
+
+      <!-- LEVEL UP CARD -->
+      <article class="team-card">
+        <div class="team-card-head">
+          <div class="team-logo-box">
+            <img src="levelup-logo.png" alt="Level Up Cornhole" />
+          </div>
+          <div class="team-card-name">
+            <div class="tag">Strategy &amp; Backend</div>
+            <h3>Level Up Cornhole</h3>
+            <div class="role">Official ACL Training Partner</div>
+          </div>
+        </div>
+
+        <div class="team-person">
+          <div class="team-person-photo placeholder">ADD<br/>gavin.jpg</div>
+          <div class="team-person-text">
+            <div class="name">Gavin Hamann</div>
+            <div class="title">Founder · Level Up Cornhole</div>
+          </div>
+        </div>
+
+        <p class="team-bio">Level Up runs one of the fastest-growing training platforms in cornhole — 100+ active clients, 4 coaches, and the official training partnership with the ACL. Built from the inside of the game, not from outside it.</p>
+
+        <div class="team-stats">
+          <div class="team-stat"><div class="team-stat-num">100+</div><div class="team-stat-lbl">Clients</div></div>
+          <div class="team-stat"><div class="team-stat-num">4</div><div class="team-stat-lbl">Coaches</div></div>
+          <div class="team-stat"><div class="team-stat-num">ACL</div><div class="team-stat-lbl">Partner</div></div>
+        </div>
+
+        <div class="team-roles">
+          <div class="team-roles-title">What Level Up Brings</div>
+          <ul>
+            <li>Sponsor strategy &amp; outreach</li>
+            <li>Pitch decks &amp; proposals</li>
+            <li>Player development</li>
+            <li>Brand identity &amp; planning</li>
+            <li>Travel &amp; tournament logistics</li>
+            <li>Business structure &amp; reporting</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- STICKSIDE CARD -->
+      <article class="team-card">
+        <div class="team-card-head">
+          <div class="team-logo-box placeholder">ADD<br/>stickside-logo.png</div>
+          <div class="team-card-name">
+            <div class="tag">Media &amp; Reach</div>
+            <h3>Stickside Cornhole</h3>
+            <div class="role">The Platform for Players. The Voice for Culture.</div>
+          </div>
+        </div>
+
+        <div class="team-person">
+          <div class="team-person-photo placeholder">ADD<br/>zack.jpg</div>
+          <div class="team-person-text">
+            <div class="name">Zack Stickney</div>
+            <div class="title">Founder · Stickside Cornhole</div>
+          </div>
+        </div>
+
+        <p class="team-bio">Stickside is the biggest media platform in cornhole — 88K+ YouTube subscribers, 573 videos, and a culture-shaping presence across every social platform. The equipment, the experience, and the eyes already on the game.</p>
+
+        <div class="team-stats">
+          <div class="team-stat"><div class="team-stat-num">88.4K</div><div class="team-stat-lbl">YouTube</div></div>
+          <div class="team-stat"><div class="team-stat-num">24K</div><div class="team-stat-lbl">Facebook</div></div>
+          <div class="team-stat"><div class="team-stat-num">25K</div><div class="team-stat-lbl">TikTok</div></div>
+        </div>
+
+        <div class="team-roles">
+          <div class="team-roles-title">What Stickside Brings</div>
+          <ul>
+            <li>Player hype edits</li>
+            <li>Tournament recap content</li>
+            <li>YouTube features &amp; clips</li>
+            <li>Sponsor-integrated reels</li>
+            <li>Behind-the-scenes storytelling</li>
+            <li>Sponsor-facing media assets</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- THE TALENT -->
+    <div class="team-talent reveal">
+      <div class="team-talent-photo">
+        <img src="Cash%202.jpg" alt="Cash Chamness" style="object-position: center 25%;" />
+      </div>
+      <div>
+        <div class="team-talent-name">+ Cash <span>Chamness</span></div>
+        <div class="team-talent-tagline">The personality. The performance. The story sponsors and fans want to be part of.</div>
+      </div>
+      <div class="team-talent-badge">The Talent</div>
+    </div>
+
   </div>
 </section>
 
