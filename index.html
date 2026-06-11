@@ -1061,6 +1061,331 @@
     .svc-card, .svc-card:nth-child(n+5) { grid-column: span 1; }
   }
 
+  /* MEDIA POWER — sponsor value comparison */
+  .mp-head {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .mp-head .eyebrow { display: inline-block; }
+  .mp-head h2 { margin-bottom: 22px; }
+  .mp-head .divider { margin: 0 auto 24px; }
+  .mp-head p {
+    color: var(--muted);
+    font-size: 16.5px;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .mp-compare {
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr;
+    gap: 18px;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .mp-card {
+    background: var(--bg-2);
+    border: 1px solid var(--panel-line);
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mp-card--old {
+    background: rgba(11, 30, 63, 0.03);
+    border-color: rgba(11, 30, 63, 0.10);
+  }
+  .mp-card--new {
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
+    border: 2px solid var(--red);
+    box-shadow: 0 22px 50px rgba(220, 38, 38, 0.16);
+  }
+  .mp-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    align-self: flex-start;
+    margin-bottom: 18px;
+  }
+  .mp-tag--old {
+    background: rgba(11, 30, 63, 0.08);
+    color: var(--dim);
+    border: 1px solid rgba(11, 30, 63, 0.12);
+  }
+  .mp-tag--new { background: var(--red); color: #ffffff; }
+  .mp-card h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1.15;
+  }
+  .mp-card--old h3 { color: var(--dim); }
+  .mp-sub {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .mp-list { list-style: none; padding: 0; margin: 0; }
+  .mp-list li {
+    padding: 10px 0 10px 26px;
+    position: relative;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(11, 30, 63, 0.05);
+  }
+  .mp-list li:last-child { border-bottom: none; }
+  .mp-card--old .mp-list li::before {
+    content: "−";
+    position: absolute;
+    left: 4px; top: 9px;
+    color: rgba(11, 30, 63, 0.3);
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .mp-card--new .mp-list li {
+    color: var(--text);
+  }
+  .mp-card--new .mp-list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 13px;
+    width: 14px; height: 14px;
+    background: var(--red);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
+  }
+  .mp-card--new .mp-list li::after {
+    content: "";
+    position: absolute;
+    left: 4px; top: 17px;
+    width: 6px; height: 3px;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(-45deg);
+  }
+  .mp-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .mp-vs::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, rgba(11,30,63,0.15) 50%, transparent 100%);
+    transform: translateX(-50%);
+  }
+  .mp-vs-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), var(--blue));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    box-shadow: 0 14px 32px rgba(220, 38, 38, 0.32);
+    position: relative;
+    z-index: 1;
+  }
+
+  .mp-gains {
+    margin: 48px auto 0;
+    max-width: 1100px;
+    background: linear-gradient(135deg, #0b1e3f 0%, #0a172e 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    color: #ffffff;
+  }
+  .mp-gains-title {
+    color: #fca5a5;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .mp-gains-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .mp-gain {
+    padding-left: 16px;
+    border-left: 2px solid var(--red);
+  }
+  .mp-gain .num {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .mp-gain .lbl {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  @media (max-width: 880px) {
+    .mp-compare { grid-template-columns: 1fr; }
+    .mp-vs { padding: 14px 0; }
+    .mp-vs::before { left: 0; right: 0; top: 50%; bottom: auto; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(11,30,63,0.15), transparent); transform: none; }
+    .mp-gains-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* EXAMPLE MEDIA — Stickside deliverables gallery */
+  .ex-head { margin-bottom: 40px; }
+  .ex-head .services-intro { max-width: 720px; }
+  .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .ex-card {
+    background: var(--bg-2);
+    border: 1px solid var(--panel-line);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 24px rgba(11, 30, 63, 0.06);
+  }
+  .ex-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(220, 38, 38, 0.4);
+    box-shadow: 0 24px 50px rgba(220, 38, 38, 0.15);
+  }
+  .ex-thumb {
+    aspect-ratio: 4 / 3;
+    background:
+      linear-gradient(135deg, rgba(220, 38, 38, 0.12) 0%, rgba(37, 99, 235, 0.16) 100%),
+      linear-gradient(160deg, #0b1e3f 0%, #1a3370 60%, #0a172e 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ex-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+  .ex-thumb-icon {
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s, background 0.4s;
+  }
+  .ex-card:hover .ex-thumb-icon {
+    transform: scale(1.1);
+    background: rgba(220, 38, 38, 0.4);
+  }
+  .ex-thumb-icon svg {
+    width: 28px; height: 28px;
+    stroke: currentColor; fill: none;
+    stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .ex-type {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 4px;
+    z-index: 2;
+  }
+  .ex-hint {
+    position: absolute;
+    top: 12px; right: 12px;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    z-index: 2;
+    background: rgba(220, 38, 38, 0.6);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .ex-body {
+    padding: 18px 20px 22px;
+  }
+  .ex-body h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .ex-body p {
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .ex-note {
+    margin: 32px auto 0;
+    max-width: 720px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.6;
+    padding: 18px 24px;
+    background: rgba(11, 30, 63, 0.04);
+    border-radius: 10px;
+    border: 1px dashed rgba(11, 30, 63, 0.18);
+  }
+  @media (max-width: 1000px) { .examples-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .examples-grid { grid-template-columns: 1fr; } }
+
   /* SPONSOR TIERS */
   .tier-grid {
     display: grid;
@@ -2302,6 +2627,8 @@
       <li><a href="#reel">Reel</a></li>
       <li><a href="#team">The Team</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#media-power">Media</a></li>
+      <li><a href="#examples">Examples</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a href="#brand">Brand</a></li>
       <li><a href="#deal">The Deal</a></li>
@@ -2653,6 +2980,201 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- MEDIA POWER -->
+<section id="media-power">
+  <div class="container reveal">
+    <div class="mp-head">
+      <span class="eyebrow">04 — Why The Media Engine Changes Everything</span>
+      <h2 class="section-title" style="text-align:center;">Sponsors Aren't<br/>Buying a <span>Jersey Patch.</span></h2>
+      <div class="divider"></div>
+      <p>Adding Stickside changes what sponsors actually get. A logo on a shirt is one thing. A logo woven into a real media engine with proven reach is something else entirely.</p>
+    </div>
+
+    <div class="mp-compare">
+      <div class="mp-card mp-card--old">
+        <span class="mp-tag mp-tag--old">The Old Way</span>
+        <h3>Logo on a Jersey.<br/>Hope For Eyeballs.</h3>
+        <p class="mp-sub">Most cornhole sponsorships look like this. The brand pays, the player wears the patch, and everyone hopes the right people see it at the right tournament.</p>
+        <ul class="mp-list">
+          <li>Static patch placement only</li>
+          <li>No dedicated content to amplify it</li>
+          <li>Reach limited to whoever is in the room</li>
+          <li>No proof of value at the end of the season</li>
+          <li>Sponsor has to renew on a gut feeling</li>
+        </ul>
+      </div>
+
+      <div class="mp-vs"><div class="mp-vs-badge">VS</div></div>
+
+      <div class="mp-card mp-card--new">
+        <span class="mp-tag mp-tag--new">The Cash Chamness Way</span>
+        <h3>Logo + Media Engine.<br/>Real Reach. Real Proof.</h3>
+        <p class="mp-sub">Cash's sponsors get the patch <em>and</em> a real content engine putting that patch in front of 137K+ followers, 88K+ YouTube subscribers, and Stickside's culture-shaping platform — every single tournament.</p>
+        <ul class="mp-list">
+          <li>Patch placement on jersey, board, and tournament gear</li>
+          <li>Custom Stickside-produced sponsor content each month</li>
+          <li>Sponsor-integrated highlight reels and recap videos</li>
+          <li>Multi-platform reach: YouTube, Facebook, TikTok, Instagram</li>
+          <li>Monthly reach + impressions reporting from both teams</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mp-gains">
+      <div class="mp-gains-title">What Brands Actually Gain</div>
+      <div class="mp-gains-grid">
+        <div class="mp-gain">
+          <div class="num">88.4K</div>
+          <div class="lbl">YouTube Reach</div>
+        </div>
+        <div class="mp-gain">
+          <div class="num">49K+</div>
+          <div class="lbl">FB + TikTok Followers</div>
+        </div>
+        <div class="mp-gain">
+          <div class="num">573+</div>
+          <div class="lbl">Videos Produced</div>
+        </div>
+        <div class="mp-gain">
+          <div class="num">Monthly</div>
+          <div class="lbl">Custom Content</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE MEDIA -->
+<section id="examples" style="background:#e9eef5;">
+  <div class="container reveal">
+    <div class="ex-head">
+      <span class="eyebrow">05 — What This Looks Like</span>
+      <h2 class="section-title">Real Content. <span>Real Stickside.</span></h2>
+      <div class="divider"></div>
+      <p class="services-intro">Eight types of content the team can produce around Cash — built for the platforms, the audience, and the sponsors paying attention.</p>
+    </div>
+
+    <div class="examples-grid stagger-grid">
+
+      <article class="ex-card" data-preview="example-hype-edit.png">
+        <div class="ex-thumb">
+          <span class="ex-type">Video</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 14 2" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Player Hype Edit</h4>
+          <p>Short, high-energy social edit built around a tournament moment, a win, or a signature shot. Built for shares.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-recap.png">
+        <div class="ex-thumb">
+          <span class="ex-type">Video</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 4 L16 4 L16 11 a4 4 0 0 1 -8 0 Z"/><path d="M8 6 L5 6 L5 8.5 a3 3 0 0 0 3 3"/><path d="M16 6 L19 6 L19 8.5 a3 3 0 0 1 -3 3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="15" x2="12" y2="20"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Tournament Recap</h4>
+          <p>Event-by-event recap content showing results, key moments, and crowd reactions. Posted within 24 hours of the event.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-sponsor-thanks.png">
+        <div class="ex-thumb">
+          <span class="ex-type">Post</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 10 L4 14 L8 18"/><path d="M16 10 L20 14 L16 18"/><path d="M14 5 L10 19"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Sponsor Thank-You Post</h4>
+          <p>Branded social post recognizing sponsors after key moments — clean, on-brand, and built to drive engagement.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-youtube-feature.png">
+        <div class="ex-thumb">
+          <span class="ex-type">YouTube</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><polygon points="10 9.5 16 12 10 14.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>YouTube Player Feature</h4>
+          <p>Long-form feature on Stickside's 88K-subscriber channel — interview-style or full event coverage with sponsor integration.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-highlight-reel.png">
+        <div class="ex-thumb">
+          <span class="ex-type">IG · TikTok</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="19" x2="13" y2="19"/><polygon points="10 9 10 15 15 12" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Highlight Reel</h4>
+          <p>Monthly vertical reel pulling together Cash's best moments — built for IG Reels and TikTok with a hook that performs.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-result-graphic.png">
+        <div class="ex-thumb">
+          <span class="ex-type">Graphic</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 3 14.5 9.5 21 10 16 14.5 17.5 21 12 17.5 6.5 21 8 14.5 3 10 9.5 9.5"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Result Graphic</h4>
+          <p>Clean, branded result post for podiums, wins, and milestones — instantly shareable across platforms and sponsor channels.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-bts.png">
+        <div class="ex-thumb">
+          <span class="ex-type">Video</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="14" height="10" rx="1.5"/><polygon points="16 11 22 7 22 17 16 13" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Behind-the-Scenes</h4>
+          <p>Pre-tournament prep, hotel routines, travel days. The real-person content that builds the connection sponsors pay for.</p>
+        </div>
+      </article>
+
+      <article class="ex-card" data-preview="example-sponsor-reel.png">
+        <div class="ex-thumb">
+          <span class="ex-type">Sponsor Content</span>
+          <span class="ex-hint">Hover to Preview</span>
+          <div class="ex-thumb-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="ex-body">
+          <h4>Sponsor-Integrated Reel</h4>
+          <p>Content built around the brand — not just slapped on top of it. Authentic placement that feels native, not forced.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="ex-note">Real Stickside examples will land here as we drop them in — each card opens into a full-screen preview so brands can actually see what their sponsorship looks like in production.</p>
+
   </div>
 </section>
 
@@ -3295,13 +3817,14 @@
     const modal = document.querySelector('.preview-modal');
     if (!backdrop || !modal) return;
     const modalImg = modal.querySelector('img');
-    const cards = document.querySelectorAll('.dir-card[data-preview]');
+    const cards = document.querySelectorAll('[data-preview]');
 
-    // Preload images so they appear instantly on hover
+    // Preload images so they appear instantly on hover; mark missing as failed
     cards.forEach(card => {
       const url = card.dataset.preview;
       if (!url) return;
       const pre = new Image();
+      pre.onerror = () => { card.dataset.previewFailed = '1'; };
       pre.src = url;
     });
 
@@ -3317,7 +3840,10 @@
 
     cards.forEach(card => {
       const url = card.dataset.preview;
-      card.addEventListener('mouseenter', () => show(url));
+      card.addEventListener('mouseenter', () => {
+        if (card.dataset.previewFailed === '1') return;
+        show(url);
+      });
       card.addEventListener('mouseleave', hide);
     });
 
