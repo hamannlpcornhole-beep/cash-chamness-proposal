@@ -1922,27 +1922,74 @@
     transform: translateY(-4px);
     box-shadow: 0 28px 60px rgba(11, 30, 63, 0.22);
   }
-  /* Preview hint badge */
-  .dir-hint {
-    position: absolute;
-    top: 14px; right: 14px;
-    font-size: 9px;
+  /* Click-to-view button on each direction card */
+  .dir-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 26px 26px;
+    padding: 12px 18px;
+    background: var(--red);
+    color: #ffffff;
+    border: 2px solid var(--red);
+    border-radius: 8px;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 0.22em;
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid var(--panel-line);
-    padding: 5px 9px;
-    border-radius: 4px;
-    z-index: 6;
-    opacity: 0.85;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    box-shadow: 0 4px 12px rgba(11, 30, 63, 0.08);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.28);
+    align-self: stretch;
+    font-family: inherit;
   }
-  .dir-card:hover .dir-hint {
-    opacity: 0;
-    transform: translateY(-6px);
+  .dir-btn:hover {
+    background: var(--red-2);
+    border-color: var(--red-2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(220, 38, 38, 0.4);
+  }
+  .dir-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Close button for the brand-direction preview modal */
+  .preview-close {
+    position: absolute;
+    top: -18px; right: -18px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--red);
+    color: var(--red);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    padding: 0;
+  }
+  .preview-close:hover {
+    background: var(--red);
+    color: #ffffff;
+    transform: rotate(90deg) scale(1.05);
+  }
+  .preview-close svg {
+    width: 20px; height: 20px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2.5; stroke-linecap: round;
+  }
+  @media (max-width: 600px) {
+    .preview-close { top: -14px; right: 0; }
   }
 
   /* SAMPLE SCHEDULE — Click-to-open example for Event & Travel card */
@@ -2400,7 +2447,7 @@
     z-index: 500;
     transition: opacity 0.35s ease;
   }
-  .preview-backdrop.active { opacity: 1; }
+  .preview-backdrop.active { opacity: 1; pointer-events: auto; cursor: pointer; }
 
   .preview-modal {
     position: fixed;
@@ -2415,6 +2462,7 @@
   .preview-modal.active {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
   }
   .preview-modal img {
     display: block;
@@ -3442,7 +3490,6 @@
 
     <div class="directions-grid stagger-grid">
       <div class="dir-card" data-preview="Blue%20.png">
-        <span class="dir-hint">Hover to Preview</span>
         <div class="dir-swatch">
           <span style="background:#006BFF;"></span>
           <span style="background:#000000;"></span>
@@ -3457,10 +3504,13 @@
           <div class="dir-vibe">This is the direction you go if you want Cash to feel like the next big thing in sports. High energy, loud, and built for highlight reels, viral moments, tournament announcements, and fast-moving social content.</div>
           <div class="dir-works"><strong>Works on:</strong> Jersey patches, TikTok graphics, tournament announcements, highlight edits, energy-driven sponsor content</div>
         </div>
+        <button class="dir-btn" type="button">
+          View Example
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12 s4 -7 10 -7 s10 7 10 7 s-4 7 -10 7 s-10 -7 -10 -7"/></svg>
+        </button>
       </div>
 
       <div class="dir-card" data-preview="Gold.png">
-        <span class="dir-hint">Hover to Preview</span>
         <div class="dir-swatch">
           <span style="background:#C9A646;"></span>
           <span style="background:#000000;"></span>
@@ -3475,10 +3525,13 @@
           <div class="dir-vibe">This direction ages with him. It feels polished, sponsor-ready, and premium. It's less about looking like a kid and more about building a brand that still looks right when he's 16, 20, and 25.</div>
           <div class="dir-works"><strong>Works on:</strong> Sponsor decks, apparel, lifestyle content, national brand pitches, polished announcement graphics</div>
         </div>
+        <button class="dir-btn" type="button">
+          View Example
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12 s4 -7 10 -7 s10 7 10 7 s-4 7 -10 7 s-10 -7 -10 -7"/></svg>
+        </button>
       </div>
 
       <div class="dir-card" data-preview="Purple.png">
-        <span class="dir-hint">Hover to Preview</span>
         <div class="dir-swatch">
           <span style="background:#4B1FA8;"></span>
           <span style="background:#000000;"></span>
@@ -3493,10 +3546,13 @@
           <div class="dir-vibe">This direction is built around Cash's favorite color and gives the brand something that feels personal to him. It's confident, clean, and unique without feeling too loud or childish.</div>
           <div class="dir-works"><strong>Works on:</strong> Personal logo, merch, social templates, player announcement graphics, profile banners, signature content</div>
         </div>
+        <button class="dir-btn" type="button">
+          View Example
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12 s4 -7 10 -7 s10 7 10 7 s-4 7 -10 7 s-10 -7 -10 -7"/></svg>
+        </button>
       </div>
 
       <div class="dir-card" data-preview="Red%20and%20cream.png">
-        <span class="dir-hint">Hover to Preview</span>
         <div class="dir-swatch">
           <span style="background:#C91F1F;"></span>
           <span style="background:#F3E9CC;"></span>
@@ -3511,6 +3567,10 @@
           <div class="dir-vibe">This direction leans into what Cash already is — the guy everyone in the crowd is cheering for. It feels authentic, community-driven, and real. This direction works really well for local and regional sponsors because it makes fans feel connected.</div>
           <div class="dir-works"><strong>Works on:</strong> Merch, community posts, local sponsor decks, fan content, tournament recaps</div>
         </div>
+        <button class="dir-btn" type="button">
+          View Example
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12 s4 -7 10 -7 s10 7 10 7 s-4 7 -10 7 s-10 -7 -10 -7"/></svg>
+        </button>
       </div>
     </div>
 
@@ -3613,6 +3673,9 @@
 <!-- Full-screen mockup preview -->
 <div class="preview-backdrop" aria-hidden="true"></div>
 <div class="preview-modal" aria-hidden="true">
+  <button class="preview-close" type="button" aria-label="Close preview">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+  </button>
   <img alt="Brand direction preview" />
 </div>
 
@@ -3934,15 +3997,16 @@
     });
   });
 
-  // Brand direction full-screen preview modal
+  // Brand direction full-screen preview modal (click-to-open, X-to-close)
   (function() {
     const backdrop = document.querySelector('.preview-backdrop');
     const modal = document.querySelector('.preview-modal');
     if (!backdrop || !modal) return;
     const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.preview-close');
     const cards = document.querySelectorAll('[data-preview]');
 
-    // Preload images so they appear instantly on hover; mark missing as failed
+    // Preload images so they appear instantly; mark missing as failed
     cards.forEach(card => {
       const url = card.dataset.preview;
       if (!url) return;
@@ -3955,23 +4019,33 @@
       modalImg.src = url;
       backdrop.classList.add('active');
       modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
     function hide() {
       backdrop.classList.remove('active');
       modal.classList.remove('active');
+      document.body.style.overflow = '';
     }
 
     cards.forEach(card => {
       const url = card.dataset.preview;
-      card.addEventListener('mouseenter', () => {
+      const btn = card.querySelector('.dir-btn');
+      if (!btn) return; // brand direction cards have buttons; example media cards don't
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         if (card.dataset.previewFailed === '1') return;
         show(url);
       });
-      card.addEventListener('mouseleave', hide);
     });
 
-    // Also hide if user scrolls or presses Escape
-    window.addEventListener('scroll', hide, { passive: true });
+    // Close on: X button, backdrop click, Escape key
+    if (closeBtn) closeBtn.addEventListener('click', hide);
+    backdrop.addEventListener('click', hide);
+    modal.addEventListener('click', (e) => {
+      // Click on the image itself does NOT close (so user can study it)
+      // But click outside the image (modal padding area) closes
+      if (e.target === modal) hide();
+    });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
   })();
 
