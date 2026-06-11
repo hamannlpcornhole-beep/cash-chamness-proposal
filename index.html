@@ -1253,6 +1253,158 @@
     .mp-gains-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
+  /* CLIENT CASE STUDY — Miranda May proof section */
+  .case-intro { color: var(--muted); font-size: 16.5px; line-height: 1.6; max-width: 760px; margin-bottom: 48px; }
+  .case-intro strong { color: var(--text); }
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .case-media {
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 9 / 16;
+    box-shadow: 0 20px 50px rgba(11, 30, 63, 0.18);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+    cursor: pointer;
+  }
+  .case-media:hover { transform: translateY(-5px); box-shadow: 0 32px 70px rgba(11, 30, 63, 0.25); }
+  .case-media img, .case-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .case-media-label {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 3;
+  }
+  .case-media-tag {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    z-index: 3;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+  .case-media-play {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(11,30,63,0.55) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+  }
+  .case-media.playing .case-media-play { opacity: 0; pointer-events: none; }
+  .case-media.playing .case-media-label, .case-media.playing .case-media-tag { opacity: 0; transition: opacity 0.4s; }
+  .case-pbtn {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.92);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 16px 36px rgba(220, 38, 38, 0.45);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 0; cursor: pointer;
+  }
+  .case-pbtn svg { width: 22px; height: 22px; fill: #ffffff; margin-left: 4px; }
+  .case-media:hover .case-pbtn { transform: scale(1.08); }
+
+  .case-stats {
+    margin: 56px auto 0;
+    max-width: 1100px;
+    background: linear-gradient(135deg, #0b1e3f 0%, #0a172e 100%);
+    border-radius: 18px;
+    padding: 32px 36px;
+    color: #ffffff;
+  }
+  .case-stats-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .case-stats-head .left {
+    color: #fca5a5;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .case-stats-head .right {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12.5px;
+    font-style: italic;
+  }
+  .case-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .case-stat {
+    padding: 18px 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--red);
+  }
+  .case-stat .stat-platform {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .case-stat .stat-num {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .case-stat .stat-num span { color: #fca5a5; font-size: 18px; margin-left: 2px; font-weight: 800; }
+  .case-tieback {
+    margin: 32px auto 0;
+    max-width: 760px;
+    text-align: center;
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 700;
+    padding: 18px 24px;
+  }
+  .case-tieback span { color: var(--red); }
+
+  @media (max-width: 980px) { .case-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 720px) {
+    .case-stats-grid { grid-template-columns: 1fr; }
+    .case-stats { padding: 26px 22px; }
+  }
+  @media (max-width: 520px) { .case-grid { grid-template-columns: 1fr; } }
+
   /* EXAMPLE MEDIA — Stickside deliverables gallery */
   .ex-head { margin-bottom: 40px; }
   .ex-head .services-intro { max-width: 720px; }
@@ -2428,19 +2580,39 @@
     padding-top: 28px;
     border-top: 2px solid var(--red);
   }
-  .signature .name {
+  .signature-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 2px solid var(--red);
+  }
+  .signature-dual .sig-col {
+    position: relative;
+  }
+  .signature-dual .sig-col + .sig-col {
+    padding-left: 28px;
+    border-left: 1px solid rgba(11, 30, 63, 0.12);
+  }
+  .signature .name, .signature-dual .name {
     font-size: 22px;
     font-weight: 900;
     color: var(--text);
     letter-spacing: -0.01em;
+    line-height: 1.15;
   }
-  .signature .title {
+  .signature .title, .signature-dual .title {
     color: var(--red);
     font-size: 13px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 800;
     margin-top: 4px;
+  }
+  @media (max-width: 720px) {
+    .signature-dual { grid-template-columns: 1fr; gap: 22px; }
+    .signature-dual .sig-col + .sig-col { padding-left: 0; padding-top: 22px; border-left: none; border-top: 1px solid rgba(11, 30, 63, 0.12); }
   }
   .signature .sub {
     color: var(--dim);
@@ -2630,7 +2802,7 @@
       <li><a href="#team">The Team</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#media-power">Media</a></li>
-      <li><a href="#examples">Examples</a></li>
+      <li><a href="#examples">Case Study</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a href="#brand">Brand</a></li>
       <li><a href="#deal">The Deal</a></li>
@@ -3049,133 +3221,76 @@
   </div>
 </section>
 
-<!-- EXAMPLE MEDIA -->
+<!-- CLIENT CASE STUDY: Miranda May -->
 <section id="examples" style="background:#e9eef5;">
   <div class="container reveal">
-    <div class="ex-head">
-      <span class="eyebrow">05 — What This Looks Like</span>
-      <h2 class="section-title">Real Content. <span>Real Stickside.</span></h2>
-      <div class="divider"></div>
-      <p class="services-intro">Eight types of content the team can produce around Cash — built for the platforms, the audience, and the sponsors paying attention.</p>
-    </div>
+    <span class="eyebrow">05 — Proof. Not Promises.</span>
+    <h2 class="section-title">Case Study: <span>Miranda May</span></h2>
+    <div class="divider"></div>
+    <p class="case-intro">A real client we've worked with — and what consistent content, brand strategy, and the right team produced. <strong>Two photos and two reels below are the same kind of content we'd build around Cash.</strong></p>
 
-    <div class="examples-grid stagger-grid">
+    <div class="case-grid">
 
-      <article class="ex-card" data-preview="example-hype-edit.png">
-        <div class="ex-thumb">
-          <span class="ex-type">Video</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 14 2" fill="currentColor" stroke="none"/></svg>
-          </div>
-        </div>
-        <div class="ex-body">
-          <h4>Player Hype Edit</h4>
-          <p>Short, high-energy social edit built around a tournament moment, a win, or a signature shot. Built for shares.</p>
-        </div>
-      </article>
+      <div class="case-media case-photo">
+        <img src="miranda-photo-1.jpg" alt="Miranda May — branded photo" />
+        <span class="case-media-label">Photo · Brand Shot</span>
+      </div>
 
-      <article class="ex-card" data-preview="example-recap.png">
-        <div class="ex-thumb">
-          <span class="ex-type">Video</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><path d="M8 4 L16 4 L16 11 a4 4 0 0 1 -8 0 Z"/><path d="M8 6 L5 6 L5 8.5 a3 3 0 0 0 3 3"/><path d="M16 6 L19 6 L19 8.5 a3 3 0 0 1 -3 3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="15" x2="12" y2="20"/></svg>
-          </div>
+      <div class="case-media case-video">
+        <video preload="metadata" playsinline>
+          <source src="miranda-clip-1.mp4" type="video/mp4" />
+        </video>
+        <span class="case-media-label">Video · Player Edit</span>
+        <span class="case-media-tag">Stickside Produced</span>
+        <div class="case-media-play">
+          <button class="case-pbtn" aria-label="Play clip" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 7 20 20 12"/></svg>
+          </button>
         </div>
-        <div class="ex-body">
-          <h4>Tournament Recap</h4>
-          <p>Event-by-event recap content showing results, key moments, and crowd reactions. Posted within 24 hours of the event.</p>
-        </div>
-      </article>
+      </div>
 
-      <article class="ex-card" data-preview="example-sponsor-thanks.png">
-        <div class="ex-thumb">
-          <span class="ex-type">Post</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><path d="M8 10 L4 14 L8 18"/><path d="M16 10 L20 14 L16 18"/><path d="M14 5 L10 19"/></svg>
-          </div>
+      <div class="case-media case-video">
+        <video preload="metadata" playsinline>
+          <source src="miranda-clip-2.mp4" type="video/mp4" />
+        </video>
+        <span class="case-media-label">Video · Player Edit</span>
+        <span class="case-media-tag">Stickside Produced</span>
+        <div class="case-media-play">
+          <button class="case-pbtn" aria-label="Play clip" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 7 20 20 12"/></svg>
+          </button>
         </div>
-        <div class="ex-body">
-          <h4>Sponsor Thank-You Post</h4>
-          <p>Branded social post recognizing sponsors after key moments — clean, on-brand, and built to drive engagement.</p>
-        </div>
-      </article>
+      </div>
 
-      <article class="ex-card" data-preview="example-youtube-feature.png">
-        <div class="ex-thumb">
-          <span class="ex-type">YouTube</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><polygon points="10 9.5 16 12 10 14.5" fill="currentColor" stroke="none"/></svg>
-          </div>
-        </div>
-        <div class="ex-body">
-          <h4>YouTube Player Feature</h4>
-          <p>Long-form feature on Stickside's 88K-subscriber channel — interview-style or full event coverage with sponsor integration.</p>
-        </div>
-      </article>
-
-      <article class="ex-card" data-preview="example-highlight-reel.png">
-        <div class="ex-thumb">
-          <span class="ex-type">IG · TikTok</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="19" x2="13" y2="19"/><polygon points="10 9 10 15 15 12" fill="currentColor" stroke="none"/></svg>
-          </div>
-        </div>
-        <div class="ex-body">
-          <h4>Highlight Reel</h4>
-          <p>Monthly vertical reel pulling together Cash's best moments — built for IG Reels and TikTok with a hook that performs.</p>
-        </div>
-      </article>
-
-      <article class="ex-card" data-preview="example-result-graphic.png">
-        <div class="ex-thumb">
-          <span class="ex-type">Graphic</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><polygon points="12 3 14.5 9.5 21 10 16 14.5 17.5 21 12 17.5 6.5 21 8 14.5 3 10 9.5 9.5"/></svg>
-          </div>
-        </div>
-        <div class="ex-body">
-          <h4>Result Graphic</h4>
-          <p>Clean, branded result post for podiums, wins, and milestones — instantly shareable across platforms and sponsor channels.</p>
-        </div>
-      </article>
-
-      <article class="ex-card" data-preview="example-bts.png">
-        <div class="ex-thumb">
-          <span class="ex-type">Video</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="14" height="10" rx="1.5"/><polygon points="16 11 22 7 22 17 16 13" fill="currentColor" stroke="none"/></svg>
-          </div>
-        </div>
-        <div class="ex-body">
-          <h4>Behind-the-Scenes</h4>
-          <p>Pre-tournament prep, hotel routines, travel days. The real-person content that builds the connection sponsors pay for.</p>
-        </div>
-      </article>
-
-      <article class="ex-card" data-preview="example-sponsor-reel.png">
-        <div class="ex-thumb">
-          <span class="ex-type">Sponsor Content</span>
-          <span class="ex-hint">Hover to Preview</span>
-          <div class="ex-thumb-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/></svg>
-          </div>
-        </div>
-        <div class="ex-body">
-          <h4>Sponsor-Integrated Reel</h4>
-          <p>Content built around the brand — not just slapped on top of it. Authentic placement that feels native, not forced.</p>
-        </div>
-      </article>
+      <div class="case-media case-photo">
+        <img src="miranda-photo-2.jpg" alt="Miranda May — branded photo" />
+        <span class="case-media-label">Photo · Brand Shot</span>
+      </div>
 
     </div>
 
-    <p class="ex-note">Real Stickside examples will land here as we drop them in — each card opens into a full-screen preview so brands can actually see what their sponsorship looks like in production.</p>
+    <div class="case-stats">
+      <div class="case-stats-head">
+        <div class="left">The Social Growth</div>
+        <div class="right">Miranda's audience after working with us</div>
+      </div>
+      <div class="case-stats-grid">
+        <div class="case-stat">
+          <div class="stat-platform">Facebook</div>
+          <div class="stat-num">49K<span>followers</span></div>
+        </div>
+        <div class="case-stat">
+          <div class="stat-platform">Instagram</div>
+          <div class="stat-num">41.3K<span>followers</span></div>
+        </div>
+        <div class="case-stat">
+          <div class="stat-platform">TikTok</div>
+          <div class="stat-num">51.5K<span>followers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="case-tieback">This is the kind of <span>content engine and growth trajectory</span> we'd build around Cash — only bigger, because he already starts with 355K followers, pro-level results, and a built-in fan base.</p>
 
   </div>
 </section>
@@ -3484,22 +3599,29 @@
 <!-- CLOSE -->
 <section id="close" class="close-section">
   <div class="container reveal">
-    <span class="eyebrow">07 — The Close</span>
-    <h2 class="section-title">Why I <span>Believe In This</span></h2>
+    <span class="eyebrow">08 — The Close</span>
+    <h2 class="section-title">Why We <span>Believe In This</span></h2>
     <div class="divider"></div>
 
     <div class="close-grid">
       <div>
-        <p class="body">I've been in this game long enough to know that <strong>talent alone doesn't build a brand.</strong> Cash has more natural talent, more personality, and more audience than almost anyone competing right now — at any age. Watching him compete and seeing how crowds respond to him, it's obvious that something special is happening.</p>
-        <p class="body">I also know this space better than almost anyone. I've built Level Up from nothing into the official training program of the ACL. I've managed social media, coached players, run campaigns, and done the backend work that makes brands grow. I've spent four years working alongside Rich and BG and I understand the cornhole world from the inside.</p>
-        <p class="body">This proposal isn't something I threw together. It's something I genuinely believe in. <strong>Cash has a window right now</strong> — he's young, he's winning, and the world is starting to pay attention. The question is whether we build the infrastructure to capture that or let the opportunity pass.</p>
-        <p class="body">I want to build it. I want to be the person in his corner making sure every win gets seen, every brand sees the value, and every opportunity gets captured.</p>
+        <p class="body">We've both been in this game long enough to know that <strong>talent alone doesn't build a brand.</strong> Cash has more natural talent, more personality, and more audience than almost anyone competing right now — at any age. Watching him compete and seeing how crowds respond to him, it's obvious that something special is happening.</p>
+        <p class="body">Between us, we run two of the most active platforms in cornhole. <strong>Level Up</strong> coaches the next generation, runs the official ACL training program, and handles the backend work that makes player brands grow. <strong>Stickside</strong> tells the stories that shape the culture, runs the biggest media platform in the sport, and has the equipment and team to produce content at a level this game doesn't usually see. We're not pitching from the outside — we're already in the room.</p>
+        <p class="body">This proposal isn't something we threw together. It's something we both genuinely believe in. <strong>Cash has a window right now</strong> — he's young, he's winning, and the world is starting to pay attention. The question is whether the right team is built around him to capture that, or whether the opportunity gets left on the table.</p>
+        <p class="body">We want to build it. We want to be the team in Cash's corner — making sure every win gets seen, every story gets told, every brand sees the value, and every opportunity gets captured.</p>
         <p class="body" style="color:var(--red); font-weight:800; font-size:22px; font-style:italic;">Let's build something worth watching.</p>
 
-        <div class="signature">
-          <div class="name">— Gavin Hamann</div>
-          <div class="title">Founder, Level Up Cornhole</div>
-          <div class="sub">Official ACL Training Partner</div>
+        <div class="signature-dual">
+          <div class="sig-col">
+            <div class="name">— Gavin Hamann</div>
+            <div class="title">Founder · Level Up Cornhole</div>
+            <div class="sub">Official ACL Training Partner</div>
+          </div>
+          <div class="sig-col">
+            <div class="name">+ Zack Stickney</div>
+            <div class="title">Founder · Stickside Cornhole</div>
+            <div class="sub">The Platform for Players. The Voice for Culture.</div>
+          </div>
         </div>
       </div>
       <div>
@@ -3511,10 +3633,10 @@
 
 <!-- CTA -->
 <div class="cta-wrap">
-  <h3>Let's <span>Talk.</span></h3>
-  <p>Ready to build something real around the most exciting player in cornhole? Reach out and let's get started.</p>
+  <h3>Let's <span>Build It.</span></h3>
+  <p>Ready to put a real team behind the most exciting player in cornhole? Reach out and let's get started.</p>
   <a href="mailto:gavin@levelupcornhole.com" class="cta-btn">Let's Talk →</a>
-  <div style="margin-top:24px; color:var(--dim); font-size:13px; letter-spacing:0.16em; text-transform:uppercase;">Gavin Hamann &nbsp;·&nbsp; Level Up Cornhole</div>
+  <div style="margin-top:24px; color:var(--dim); font-size:13px; letter-spacing:0.16em; text-transform:uppercase;">Gavin Hamann &amp; Zack Stickney &nbsp;·&nbsp; Level Up × Stickside</div>
 </div>
 
 <footer>© Level Up Cornhole · Proposal for Cash Chamness</footer>
@@ -3816,6 +3938,32 @@
       video.currentTime = 0;
     });
   })();
+
+  // Case study video players (Miranda May section)
+  document.querySelectorAll('.case-video').forEach(card => {
+    const video = card.querySelector('video');
+    if (!video) return;
+    function toggle() {
+      if (video.paused) {
+        video.play().then(() => {
+          card.classList.add('playing');
+          video.setAttribute('controls', '');
+        }).catch(() => {});
+      } else {
+        video.pause();
+        card.classList.remove('playing');
+      }
+    }
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName === 'VIDEO' && video.hasAttribute('controls')) return;
+      toggle();
+    });
+    video.addEventListener('ended', () => {
+      card.classList.remove('playing');
+      video.removeAttribute('controls');
+      video.currentTime = 0;
+    });
+  });
 
   // Brand direction full-screen preview modal
   (function() {
