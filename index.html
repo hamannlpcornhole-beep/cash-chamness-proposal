@@ -59,20 +59,25 @@
     text-transform: uppercase;
     font-size: 13px;
     color: var(--red);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 22px;
     list-style: none;
+    flex-wrap: nowrap;
+    align-items: center;
   }
   .nav-links a {
     color: var(--text);
     text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 0.14em;
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 700;
     transition: color 0.2s ease;
+    white-space: nowrap;
   }
   .nav-links a:hover { color: var(--red); }
   .nav-toggle {
@@ -83,7 +88,7 @@
     font-size: 22px;
     cursor: pointer;
   }
-  @media (max-width: 880px) {
+  @media (max-width: 1180px) {
     .nav-links { display: none; }
     .nav-toggle { display: block; }
     .nav-links.open {
@@ -2841,18 +2846,18 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-brand">Cash Chamness · Level Up × Stickside</div>
+    <div class="nav-brand">Level Up × Stickside</div>
     <button class="nav-toggle" aria-label="Menu">☰</button>
     <ul class="nav-links">
-      <li><a href="#why-me">Why Me</a></li>
-      <li><a href="#opportunity">Opportunity</a></li>
-      <li><a href="#team">The Team</a></li>
+      <li><a href="#why-me">About</a></li>
+      <li><a href="#opportunity">Numbers</a></li>
+      <li><a href="#team">Team</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#media-power">Media</a></li>
-      <li><a href="#examples">Case Study</a></li>
+      <li><a href="#examples">Proof</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a href="#brand">Brand</a></li>
-      <li><a href="#deal">The Deal</a></li>
+      <li><a href="#deal">Deal</a></li>
       <li><a href="#close">Close</a></li>
     </ul>
   </div>
