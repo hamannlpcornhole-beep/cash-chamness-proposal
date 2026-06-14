@@ -1098,13 +1098,14 @@
     flex-direction: column;
   }
   .mp-card--old {
-    background: rgba(11, 30, 63, 0.03);
-    border-color: rgba(11, 30, 63, 0.10);
-  }
-  .mp-card--new {
     background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
     border: 2px solid var(--red);
     box-shadow: 0 22px 50px rgba(220, 38, 38, 0.16);
+  }
+  .mp-card--new {
+    background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+    border: 2px solid var(--blue);
+    box-shadow: 0 22px 50px rgba(30, 64, 175, 0.18);
   }
   .mp-tag {
     display: inline-block;
@@ -1117,12 +1118,8 @@
     align-self: flex-start;
     margin-bottom: 18px;
   }
-  .mp-tag--old {
-    background: rgba(11, 30, 63, 0.08);
-    color: var(--dim);
-    border: 1px solid rgba(11, 30, 63, 0.12);
-  }
-  .mp-tag--new { background: var(--red); color: #ffffff; }
+  .mp-tag--old { background: var(--red); color: #ffffff; }
+  .mp-tag--new { background: var(--blue); color: #ffffff; }
   .mp-card h3 {
     font-size: 22px;
     text-transform: uppercase;
@@ -1132,7 +1129,6 @@
     margin-bottom: 10px;
     line-height: 1.15;
   }
-  .mp-card--old h3 { color: var(--dim); }
   .mp-sub {
     color: var(--muted);
     font-size: 13.5px;
@@ -1143,25 +1139,14 @@
   .mp-list li {
     padding: 10px 0 10px 26px;
     position: relative;
-    color: var(--muted);
+    color: var(--text);
     font-size: 13.5px;
     line-height: 1.5;
     border-bottom: 1px solid rgba(11, 30, 63, 0.05);
   }
   .mp-list li:last-child { border-bottom: none; }
+  /* Red checkmark for Level Up card */
   .mp-card--old .mp-list li::before {
-    content: "−";
-    position: absolute;
-    left: 4px; top: 9px;
-    color: rgba(11, 30, 63, 0.3);
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 1;
-  }
-  .mp-card--new .mp-list li {
-    color: var(--text);
-  }
-  .mp-card--new .mp-list li::before {
     content: "";
     position: absolute;
     left: 0; top: 13px;
@@ -1169,6 +1154,25 @@
     background: var(--red);
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
+  }
+  .mp-card--old .mp-list li::after {
+    content: "";
+    position: absolute;
+    left: 4px; top: 17px;
+    width: 6px; height: 3px;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(-45deg);
+  }
+  /* Blue checkmark for Stickside card */
+  .mp-card--new .mp-list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 13px;
+    width: 14px; height: 14px;
+    background: var(--blue);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.18);
   }
   .mp-card--new .mp-list li::after {
     content: "";
@@ -3183,37 +3187,37 @@
 <section id="media-power">
   <div class="container reveal">
     <div class="mp-head">
-      <span class="eyebrow">04 — Why The Media Engine Changes Everything</span>
-      <h2 class="section-title" style="text-align:center;">Sponsors Aren't<br/>Buying a <span>Jersey Patch.</span></h2>
+      <span class="eyebrow">04 — The Combined Sponsorship Value</span>
+      <h2 class="section-title" style="text-align:center;">Two Brands.<br/>One <span>Sponsorship.</span></h2>
       <div class="divider"></div>
-      <p>Adding Stickside changes what sponsors actually get. A logo on a shirt is one thing. A logo woven into a real media engine with proven reach is something else entirely.</p>
+      <p>When a brand sponsors Cash, they aren't just sponsoring a player. They're tapping into <strong>both Level Up's training network and Stickside's culture-shaping media reach</strong> — combined into one sponsor package cornhole doesn't usually see.</p>
     </div>
 
     <div class="mp-compare">
       <div class="mp-card mp-card--old">
-        <span class="mp-tag mp-tag--old">The Old Way</span>
-        <h3>Logo on a Jersey.<br/>Hope For Eyeballs.</h3>
-        <p class="mp-sub">Most cornhole sponsorships look like this. The brand pays, the player wears the patch, and everyone hopes the right people see it at the right tournament.</p>
+        <span class="mp-tag mp-tag--old">Level Up Cornhole</span>
+        <h3>Strategy. Audience.<br/>ACL Reach.</h3>
+        <p class="mp-sub">Level Up runs the official ACL training program — 100+ active clients, 4 coaches, and a direct line into the ACL training network and email list.</p>
         <ul class="mp-list">
-          <li>Static patch placement only</li>
-          <li>No dedicated content to amplify it</li>
-          <li>Reach limited to whoever is in the room</li>
-          <li>No proof of value at the end of the season</li>
-          <li>Sponsor has to renew on a gut feeling</li>
+          <li>Tournament + signature event logo placement</li>
+          <li>Featured in Level Up campaigns + email list (2,300+ ACL contacts)</li>
+          <li>Pro-level player development backing the brand</li>
+          <li>Sponsor strategy, outreach, and monthly reporting</li>
+          <li>Direct connection into the ACL training community</li>
         </ul>
       </div>
 
-      <div class="mp-vs"><div class="mp-vs-badge">VS</div></div>
+      <div class="mp-vs"><div class="mp-vs-badge">+</div></div>
 
       <div class="mp-card mp-card--new">
-        <span class="mp-tag mp-tag--new">The Cash Chamness Way</span>
-        <h3>Logo + Media Engine.<br/>Real Reach. Real Proof.</h3>
-        <p class="mp-sub">Cash's sponsors get the patch <em>and</em> a real content engine putting that patch in front of 137K+ followers, 88K+ YouTube subscribers, and Stickside's culture-shaping platform — every single tournament.</p>
+        <span class="mp-tag mp-tag--new">Stickside Cornhole</span>
+        <h3>Custom Content.<br/>Real Reach.</h3>
+        <p class="mp-sub">Stickside puts that sponsor in front of 137K+ social followers, 88K+ YouTube subscribers, and a culture-shaping presence across every social platform.</p>
         <ul class="mp-list">
-          <li>Patch placement on jersey, board, and tournament gear</li>
           <li>Custom Stickside-produced sponsor content each month</li>
           <li>Sponsor-integrated highlight reels and recap videos</li>
           <li>Multi-platform reach: YouTube, Facebook, TikTok, Instagram</li>
+          <li>YouTube feature integration on signature events</li>
           <li>Monthly reach + impressions reporting from both teams</li>
         </ul>
       </div>
@@ -3224,19 +3228,19 @@
       <div class="mp-gains-grid">
         <div class="mp-gain">
           <div class="num">88.4K</div>
-          <div class="lbl">YouTube Reach</div>
+          <div class="lbl">Stickside YouTube</div>
         </div>
         <div class="mp-gain">
-          <div class="num">49K+</div>
-          <div class="lbl">FB + TikTok Followers</div>
+          <div class="num">137K+</div>
+          <div class="lbl">Total Social Reach</div>
         </div>
         <div class="mp-gain">
-          <div class="num">573+</div>
-          <div class="lbl">Videos Produced</div>
+          <div class="num">2,300+</div>
+          <div class="lbl">ACL Email Contacts</div>
         </div>
         <div class="mp-gain">
           <div class="num">Monthly</div>
-          <div class="lbl">Custom Content</div>
+          <div class="lbl">Custom Content + Reports</div>
         </div>
       </div>
     </div>
