@@ -2896,6 +2896,12 @@
     opacity: 1;
     transform: translateY(0);
   }
+  /* Sponsors section is too tall for the reveal to fire reliably on phones — keep it always visible */
+  #sponsors .reveal,
+  #sponsors .reveal.in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 
   /* SCROLL PROGRESS BAR */
   .scroll-progress {
