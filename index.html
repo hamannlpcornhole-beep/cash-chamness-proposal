@@ -1662,6 +1662,55 @@
   }
   @media (max-width: 880px) { .tier-grid { grid-template-columns: 1fr; } }
 
+  /* SPONSOR PILLARS — three pillars above the tier cards */
+  .spon-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 40px 0 44px;
+  }
+  .spon-pillar {
+    background: var(--bg-2);
+    border: 1px solid var(--panel-line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    border-top: 3px solid var(--red);
+    box-shadow: 0 10px 22px rgba(11, 30, 63, 0.05);
+  }
+  .spon-pillar h4 {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  .spon-pillar p {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  @media (max-width: 880px) {
+    .spon-pillars { grid-template-columns: 1fr; }
+  }
+
+  /* Tier tagline + Includes header */
+  .tier-tagline {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 14px 0 4px;
+    font-style: italic;
+  }
+  .tier h5 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 800;
+    margin: 20px 0 4px;
+  }
+
   /* STRATEGY BOARD — Target Brand Categories */
   .strategy-board {
     margin: 80px 0 0;
@@ -3420,49 +3469,73 @@
 <!-- SPONSORS -->
 <section id="sponsors" style="background:#e9eef5;">
   <div class="container reveal">
-    <span class="eyebrow">04 — The Sponsor Vision</span>
-    <h2 class="section-title">What Sponsors Are <span>Actually Buying</span></h2>
+    <span class="eyebrow">06 — Partnership Opportunities</span>
+    <h2 class="section-title">Partnership <span>Opportunities</span></h2>
     <div class="divider"></div>
-    <p class="body">Cornhole is one of the fastest growing sports in America. Millions of people play it. Tournaments are selling out. The ACL is expanding. And right now <strong>the sponsorship market is almost completely untouched.</strong></p>
-    <p class="body">That means any brand that gets in now — gets in at the ground floor.</p>
-    <p class="body">Cash Chamness is the perfect vehicle for that. He's young, he's winning, he's crowd-loved, and he has a verified audience of <strong>400,000+ people across platforms.</strong> He's not just a cornhole player. He's a content creator, a competitor, and a personality that people genuinely root for.</p>
+    <p class="body"><strong>This is not just a logo placement.</strong></p>
+    <p class="body">A partnership with Cash Chamness gives your brand access to one of the most exciting young players in cornhole, backed by the content reach of <strong>Stickside</strong> and the training and community platform of <strong>Level Up Cornhole</strong>.</p>
+    <p class="body">Our goal is to create a sponsorship that feels <strong>active, visible, and valuable</strong> throughout the season — not just a logo on a jersey.</p>
+    <p class="body">Each package is built around three things:</p>
+
+    <div class="spon-pillars">
+      <div class="spon-pillar">
+        <h4>Brand Visibility</h4>
+        <p>Your brand is seen across Cash's tournament content, social media, graphics, and select event coverage.</p>
+      </div>
+      <div class="spon-pillar">
+        <h4>Content Activation</h4>
+        <p>Stickside-produced content gives sponsors a cleaner, more professional way to be promoted through reels, recap videos, tournament graphics, and social campaigns.</p>
+      </div>
+      <div class="spon-pillar">
+        <h4>Measurable Value</h4>
+        <p>Sponsors receive reach, engagement, and impression reporting so they can clearly see the impact of the partnership.</p>
+      </div>
+    </div>
 
     <div class="tier-grid stagger-grid">
       <div class="tier featured">
-        <div class="tier-name">Presenting Sponsor</div>
+        <div class="tier-name">Flagship Partner</div>
         <div class="tier-price">$5,000–10,000 <small>/ season</small></div>
+        <p class="tier-tagline">Built for a brand that wants maximum visibility and category-level presence around Cash throughout the season.</p>
+        <h5>Includes</h5>
         <ul>
-          <li>Logo on jersey, board, and all tournament equipment</li>
-          <li>4 Stickside-produced sponsored posts per month (FB, IG, TikTok)</li>
-          <li>1 dedicated Stickside YouTube feature or long-form integration</li>
-          <li>Sponsor-integrated highlight reels and tournament recap content</li>
-          <li>Feature in Level Up campaigns and email list (2,300+ ACL contacts)</li>
+          <li>Primary logo placement on Cash's jersey, boards, or tournament equipment</li>
+          <li>4 sponsored content pieces per month across Cash/Stickside channels</li>
+          <li>Dedicated Stickside YouTube feature or long-form sponsor integration</li>
+          <li>Sponsor-integrated tournament recap content</li>
           <li>Co-branded content at signature events and Worlds</li>
-          <li>Sponsor callout in all tournament announcements and graphics</li>
-          <li>Monthly reach + impressions reporting from both teams</li>
-          <li>First right of renewal</li>
+          <li>Sponsor callouts in major tournament announcements and result graphics</li>
+          <li>Feature placement in select Level Up campaigns and email promotions</li>
+          <li>Monthly reach, engagement, and impression reporting</li>
+          <li>First right of renewal for the following season</li>
+          <li>Optional category exclusivity based on sponsor type</li>
         </ul>
       </div>
       <div class="tier">
-        <div class="tier-name">Brand Partner</div>
+        <div class="tier-name">Season Partner</div>
         <div class="tier-price">$2,000–4,000 <small>/ season</small></div>
+        <p class="tier-tagline">A strong fit for brands that want consistent exposure and professional content throughout the season without the full flagship commitment.</p>
+        <h5>Includes</h5>
         <ul>
-          <li>Logo on jersey or board</li>
+          <li>Logo placement on Cash's jersey or boards</li>
           <li>2 Stickside-produced sponsored posts per month</li>
-          <li>1 sponsor mention in a Stickside tournament recap per quarter</li>
-          <li>Feature in select Level Up campaigns</li>
-          <li>Tournament graphic mentions</li>
-          <li>End of season reach + impressions report</li>
+          <li>Sponsor mention in tournament recap content</li>
+          <li>Feature in select Level Up or Stickside campaigns</li>
+          <li>Logo/tag placement on tournament result graphics</li>
+          <li>End-of-season reach and impression report</li>
         </ul>
       </div>
       <div class="tier">
-        <div class="tier-name">Community Sponsor</div>
+        <div class="tier-name">Community Supporter</div>
         <div class="tier-price">$500–1,500 <small>/ season</small></div>
+        <p class="tier-tagline">A simple entry point for local businesses or smaller brands that want to support Cash and get in front of the cornhole community.</p>
+        <h5>Includes</h5>
         <ul>
-          <li>Social media shoutout package — 4 posts over the season</li>
-          <li>Logo feature on select Stickside graphics</li>
-          <li>Tournament mention on Cash's social</li>
-          <li>Great entry point for local businesses</li>
+          <li>4 social media shoutouts throughout the season</li>
+          <li>Logo feature on select Stickside or Cash graphics</li>
+          <li>Sponsor mention on Cash's social media</li>
+          <li>Optional tournament/event shoutout</li>
+          <li>Great entry-level package for local businesses and community supporters</li>
         </ul>
       </div>
     </div>
