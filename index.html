@@ -2610,6 +2610,58 @@
     max-width: 820px;
     line-height: 1.7;
   }
+  /* Tagline + descriptive paragraph inside deal cards */
+  .deal-tagline {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    font-style: italic;
+    margin: 16px 0 0;
+    line-height: 1.45;
+  }
+  .deal-desc {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 14px 0 0;
+  }
+  /* Additional notes box under the deal grid */
+  .deal-notes {
+    margin-top: 28px;
+    background: rgba(11, 30, 63, 0.04);
+    border: 1px dashed rgba(11, 30, 63, 0.2);
+    border-radius: 12px;
+    padding: 22px 26px;
+  }
+  .deal-notes h4 {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+  .deal-notes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .deal-notes li {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.6;
+    padding: 10px 0 10px 22px;
+    position: relative;
+  }
+  .deal-notes li + li { border-top: 1px solid rgba(11, 30, 63, 0.06); }
+  .deal-notes li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 19px;
+    width: 10px; height: 2px;
+    background: var(--red);
+  }
+  .deal-notes strong { color: var(--text); font-weight: 800; }
   @media (max-width: 880px) { .deal-grid { grid-template-columns: 1fr; } }
 
   /* CLOSE */
@@ -3592,45 +3644,69 @@
 <!-- THE DEAL -->
 <section id="deal" style="background:#e9eef5;">
   <div class="container reveal">
-    <span class="eyebrow">06 — The Deal</span>
-    <h2 class="section-title">How This <span>Works</span></h2>
+    <span class="eyebrow">07 — Partnership Options</span>
+    <h2 class="section-title">Player Growth<br/><span>Partnership Options</span></h2>
     <div class="divider"></div>
-    <p class="body">I want this to be a real partnership — not just a service. Here's how I've structured it so that it's fair, low-risk to start, and built to grow.</p>
+    <p class="body">Two ways to work together — both built around the player's goals, schedule, sponsors, and how hands-on the management needs to be.</p>
 
     <div class="deal-grid stagger-grid">
+
       <div class="deal">
         <div class="deal-name">Starter Partnership</div>
         <div class="deal-price">$400 <small>/ month</small></div>
-        <div style="color:var(--muted); font-size:14px; margin-top:6px;">+ 15% commission on sponsor deals closed</div>
-        <h4>What's Included</h4>
+        <div style="color:var(--muted); font-size:14px; margin-top:6px;">+ 15% sponsor commission</div>
+        <p class="deal-tagline">Built for players who want guidance, structure, and support without full content or brand management.</p>
+        <p class="deal-desc">The Starter Partnership is focused on helping the player and their team make the most of what they already have. This package gives the player a more organized plan around social media, sponsor outreach, branding, travel logistics, and overall player growth.</p>
+        <h4>Includes</h4>
         <ul>
-          <li>Full social media strategy and content coordination</li>
-          <li>Sponsorship research and outreach</li>
-          <li>Brand identity development</li>
-          <li>Basic travel and logistics support</li>
-          <li>Monthly update and reporting</li>
+          <li>Social media consulting and content direction</li>
+          <li>Monthly content and posting guidance</li>
+          <li>Sponsor outreach strategy and support</li>
+          <li>Sponsor target list and pitch direction</li>
+          <li>General branding ideas and player positioning</li>
+          <li>Travel and event logistics support</li>
+          <li>Help making current content more valuable to sponsors</li>
+          <li>Communication updates between us, the player/team, and sponsors when needed</li>
+          <li>Monthly strategy check-in and progress update</li>
         </ul>
-        <div class="deal-best"><span>Best for:</span> Getting the infrastructure built, proving the model, landing first sponsors.</div>
+        <div class="deal-best"><span>Best For:</span> Players who want to build a stronger foundation, become more professional to sponsors, and create a clear plan around their brand without full management.</div>
       </div>
 
       <div class="deal featured">
         <div class="deal-name">Full Management</div>
-        <div class="deal-price">$700 <small>/ month</small></div>
-        <div style="color:var(--muted); font-size:14px; margin-top:6px;">+ 15% commission on sponsor deals closed</div>
-        <h4>What's Included</h4>
+        <div class="deal-price">Starting at $900 <small>/ month</small></div>
+        <div style="color:var(--muted); font-size:14px; margin-top:6px;">+ 15% sponsor commission</div>
+        <p class="deal-tagline">Built for players who want a full backend team helping manage their brand, media, sponsors, content, and event presence.</p>
+        <p class="deal-desc">Full Management is where we move from giving direction to helping build and execute the plan. This package is tailored around the player's goals, schedule, sponsors, content needs, and long-term brand growth.</p>
+        <h4>Includes</h4>
         <ul>
-          <li>Everything in Starter</li>
-          <li>Dedicated media team for event coverage</li>
-          <li>Full travel and logistics handling</li>
-          <li>Active sponsor relationship management</li>
-          <li>Level Up campaign integration</li>
-          <li>Priority availability — I'm your guy for every business decision</li>
+          <li>Full personal branding package</li>
+          <li>Custom colors, fonts, graphics, and content style</li>
+          <li>Weekly social media plan</li>
+          <li>1–2 edited videos per week when footage is available</li>
+          <li>Weekly graphics and sponsor-focused posts</li>
+          <li>Sponsor-designed media and promotional content</li>
+          <li>Tournament recap content</li>
+          <li>Sponsor appreciation posts</li>
+          <li>Filming, photos, and player capture at events when available or scheduled</li>
+          <li>Sponsor communication and deliverable tracking</li>
+          <li>Travel and event logistics support</li>
+          <li>Social media strategy tailored to sponsor value</li>
+          <li>Custom content plan built around the player's needs, schedule, and goals</li>
+          <li>Level Up + Stickside integration for training, brand, media, and sponsor support</li>
         </ul>
-        <div class="deal-best"><span>Best for:</span> Full build-out heading into a new season, maximum brand growth.</div>
+        <div class="deal-best"><span>Best For:</span> Players who want consistent content, stronger sponsor value, and a real team helping build their brand behind the scenes.</div>
       </div>
+
     </div>
 
-    <p class="commission-note">The 15% commission means I only make real money when I bring in real money for Cash. If I close a $5,000 sponsor deal, I earn $750. That's the incentive structure — I'm not just collecting a retainer, I'm motivated to actually deliver.</p>
+    <div class="deal-notes">
+      <h4>Additional Notes</h4>
+      <ul>
+        <li><strong>Commission</strong> applies only to sponsor deals we help source, negotiate, or close.</li>
+        <li><strong>Full Management</strong> starts at $900/month. Final pricing may vary depending on content volume, event coverage, travel support, sponsor deliverables, media production, and how hands-on the management needs to be.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
