@@ -1029,6 +1029,46 @@
   }
   .svc-card:hover .svc-bullets li::before { background: var(--red); }
 
+  /* "Dive deeper" link inside the featured card */
+  .svc-deeper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    padding: 11px 16px;
+    background: rgba(220, 38, 38, 0.10);
+    border: 1px solid rgba(220, 38, 38, 0.32);
+    color: var(--red);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  }
+  .svc-deeper:hover {
+    background: rgba(220, 38, 38, 0.2);
+    border-color: var(--red);
+    transform: translateY(2px);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.25);
+  }
+  .svc-deeper svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: bobDown 2s ease-in-out infinite;
+  }
+  @keyframes bobDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+  }
+
   /* Featured (Level Up Partnership) */
   .svc-card--featured {
     border: 2px solid var(--red);
@@ -3221,14 +3261,18 @@
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M8 4 L16 4 L16 11 a4 4 0 0 1 -8 0 Z"/><path d="M8 6 L5 6 L5 8.5 a3 3 0 0 0 3 3"/><path d="M16 6 L19 6 L19 8.5 a3 3 0 0 1 -3 3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="15" x2="12" y2="20"/></svg>
         </div>
-        <h3>Level Up Brand Partnership</h3>
-        <p class="svc-value">Expand Cash's role as a Level Up sponsored athlete, with Stickside-produced content amplifying every campaign push.</p>
+        <h3>Level Up / Stickside Integration</h3>
+        <p class="svc-value">Cash gets two of cornhole's biggest engines behind him — Level Up's training, audience, and sponsor strategy, plus Stickside's media reach and culture-shaping content.</p>
         <ul class="svc-bullets">
-          <li>Feature Cash in Level Up campaigns, promotional videos, and social media pushes</li>
-          <li>Use Cash in coaching content, training content, and platform marketing</li>
-          <li>Connect Cash's personal brand with Level Up's audience and growth</li>
-          <li>Build long-term opportunities through product launches, campaigns, and athlete-driven content</li>
+          <li>Featured in Level Up campaigns, training content, and platform marketing</li>
+          <li>Custom Stickside-produced media, edits, and sponsor-integrated content</li>
+          <li>Combined reach across the ACL training network and Stickside's 137K+ social</li>
+          <li>Long-term opportunities through product launches, joint campaigns, and athlete-driven content</li>
         </ul>
+        <a href="#media-power" class="svc-deeper">
+          See How It Works
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
       </article>
 
     </div>
